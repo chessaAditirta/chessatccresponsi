@@ -29,6 +29,8 @@ RUN apt-get autoclean && apt-get -y autoremove
 # add a phpinfo script for INFO purposes
 RUN echo "<?php phpinfo();" >> /var/www/html/index.php
 
+RUN mkdir /var/www
+
 # NGINX mountable directories for config and logs
 VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx"]
 
